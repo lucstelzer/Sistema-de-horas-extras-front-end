@@ -1,0 +1,125 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #14488b;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+.login-wrapper {
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.login-card {
+    width: min(420px, 90vw); 
+    aspect-ratio: 1 / 1; 
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 28px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+.login-card .title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+.login-card input[type="text"],
+.login-card input[type="Cadastro"],
+.login-card input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #e6e9ee;
+    border-radius: 8px;
+    background: #fbfdff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: box-shadow .15s, border-color .15s;
+}
+.login-card input:focus {
+    border-color: #064499;
+    box-shadow: 0 6px 18px #4f46e514;
+}
+.login-card button[type="submit"] {
+    padding: 10px;  
+    background: linear-gradient(90deg,#064499,#064466);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.98rem;
+    transition: transform .08s ease, box-shadow .12s;
+}
+.login-card button[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px #064499;
+}
+.login-card .meta {
+    text-align: center;
+    font-size: 0.87rem;
+    color: #6b7280;
+}
+@media (max-width: 360px) {
+    .login-card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+}
+.login-card .logo {
+    display: block;
+    margin: 0 auto 8px;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+.login-card form {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+.login-card .meta a {
+    color: #000000;
+    text-decoration: none;
+}
+.login-card .meta a:hover {
+    text-decoration: underline;
+}
+.login-card .remember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #374151;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.login-card .remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #064499;
+}
+.error-message {
+    color: #dc3545; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -5px; 
+    display: none; 
+}
