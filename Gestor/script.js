@@ -3,7 +3,7 @@ document.getElementById('toggle-sidebar').addEventListener('click', function () 
 });
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = '../index.html';
+    window.location.href = '../index.html'; 
 }
 
 document.getElementById('logout').addEventListener('click', logout);
@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
         } else {
-            // Aprovadas/Reprovadas: SEM botões de ação, apenas indicador de status
             const label = status === 'aprovadas' ? 'Aprovada' : 'Reprovada';
             const statusClass = status === 'aprovadas' ? 'status-approved' : 'status-rejected';
 
@@ -176,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ? notification.justificativa + ' Completa' // Adiciona 'Completa' para a visualização detalhada
             : notification.justificativa;
 
-        // Adicionando a classe 'hidden-detail' apenas para o item detalhado (inicialmente escondido)
         const displayStyle = isDetailView ? 'style="display: none;"' : '';
         const detailClass = isDetailView ? 'hidden-detail' : '';
 
@@ -410,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             noticiaForm.reset();
 
-            window.location.href = '../Gestor/index.html';
+            window.location.href = 'gestor.html'; 
         });
     }
 });
