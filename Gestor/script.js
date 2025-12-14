@@ -3,7 +3,7 @@ document.getElementById('toggle-sidebar').addEventListener('click', function () 
 });
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 document.getElementById('logout').addEventListener('click', logout);
@@ -93,7 +93,7 @@ function salvarFormulario() {
 
     alert('Perfil salvo com sucesso!');
 
-    window.location.href = '../Gestor/index.html';
+    window.location.href = 'gestor.html';
 }
 carregarFormulario();
 

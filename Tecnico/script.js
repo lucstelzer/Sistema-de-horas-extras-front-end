@@ -9,7 +9,7 @@ showpage('dashboard');
 
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 document.getElementById('logout').addEventListener('click', logout);
@@ -238,7 +238,7 @@ function salvarFormulario() {
 
 
     alert('Perfil salvo com sucesso!');
-    window.location.href = '../tecnico/index.html';
+    window.location.href = 'tecnico.html';
 }
 
 
