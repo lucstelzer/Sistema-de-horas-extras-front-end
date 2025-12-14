@@ -10,19 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
             username: "tecnico",
             password: "123",
             role: "tecnico",
-            redirectTo: "../Tecnico/tecnico.html"
+            redirectTo: "./Tecnico/tecnico.html" 
         },
         {
             username: "encarregado",
             password: "456",
             role: "encarregado",
-            redirectTo: "../Encarregado/encarregado.html"
+            redirectTo: "./Encarregado/encarregado.html" 
         },
         {
             username: "gestor",
             password: "789",
             role: "gestor",
-            redirectTo: "../Gestor/gestor.html"
+            redirectTo: "./Gestor/gestor.html"
         }
     ];
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 errorMessage.style.display = "none";
                 alert(`Login como ${user.role} bem-sucedido. Redirecionando...`);
-                window.location.href = user.redirectTo;
+                window.location.href = user.redirectTo; 
 
             } else {
                 errorMessage.textContent = "Senha incorreta. Tente novamente.";
