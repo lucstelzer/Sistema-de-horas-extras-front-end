@@ -36,6 +36,9 @@ img {
 .choices .choices__inner{
     background-color: var(--color-background-th) !important;
     border: var(--border-color);
+    width: 100%;
+    border-radius: 8px;
+    height: fit-content;
 }
 .page.active {
     display: block;
@@ -188,7 +191,7 @@ button:hover {
 
 /* Generic Form Elements */
 form {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: var(--color-background-table);
     padding: 20px;
@@ -200,7 +203,7 @@ form {
 }
 
 .form-container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px auto;
     padding: 25px;
     background: var(--color-background-table);
@@ -1050,6 +1053,7 @@ select#idioma:focus {
 
     .hamburger-btn {
         display: block;
+        color: var(--color-text);
     }
 
     body {
@@ -1086,5 +1090,10 @@ select#idioma:focus {
 
     .btn-cancelar {
         margin-left: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .choices .choices__inner{
+        max-width: fit-content;
     }
 }
