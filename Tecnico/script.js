@@ -9,6 +9,7 @@ showpage('dashboard');
 
 function logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user_role'); // Adicionado para limpar o papel do usuário
     window.location.href = '../index.html'; 
 }
 
@@ -149,6 +150,10 @@ function filterNotifications(filterType = null) {
 
     renderNotifications(filteredList);
 }
+
+// CORREÇÃO CRÍTICA: Definir pendingHoursElement
+const pendingHoursElement = document.getElementById('total-pending-hours');
+
 document.querySelectorAll('.complete-task').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -193,7 +198,7 @@ function enableAutoGrow(selector) {
 enableAutoGrow('.auto-grow');
 function showpage(pageName) {
     const pages = document.querySelectorAll('.page');
-    const body = document.body;
+    const sidebar = document.querySelector('.sidebar');
 
     pages.forEach(page => {
         page.classList.remove('active');
@@ -228,7 +233,7 @@ function carregarFormulario() {
 function salvarFormulario() {
     localStorage.setItem('tecnico_nome', nomeInput.value);
     localStorage.setItem('tecnico_email', emailInput.value);
-    localStorage.setItem('tecnico_telefone', telefoneInput.value);
+    localStorage.setItem('tecnico_telefone', emailInput.value);
 
     localStorage.setItem('tecnico_matricula', matriculaInput.value);
     localStorage.setItem('tecnico_funcao', funcaoInput.value);
@@ -239,7 +244,7 @@ function salvarFormulario() {
 
     alert('Perfil salvo com sucesso!');
     
-    window.location.href = 'tecnico.html'; 
+    showpage('perfil'); 
 }
 
 
@@ -248,11 +253,6 @@ if (saveButton) {
     saveButton.addEventListener('click', salvarFormulario);
 }
 
-
-carregarFormulario();
-if (saveButton) {
-    saveButton.addEventListener('click', salvarFormulario);
-}
 function darkModeToggle() {
     if (document.body.classList.contains('dark-mode')) {
         document.body.classList.remove('dark-mode');
@@ -268,4 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
+});
+// Inicializa a página
+document.addEventListener('DOMContentLoaded', () => {
+    filterNotifications('todas'); // Carrega a aba 'Todas' ao iniciar
 });

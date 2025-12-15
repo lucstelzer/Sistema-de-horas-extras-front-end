@@ -7,6 +7,7 @@
     <title>Encarregado</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> 
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a href="#dashboard" onclick="showpage('dashboard')">
-                <img src="/Trabalho Fortes/Logo .png" alt="Logo da Empresa" class="logo">
+                <img src="../Logo.png" alt="Logo da Empresa" class="logo">
             </a>
         </div>
         <ul class="sidebar-menu">
@@ -141,6 +142,7 @@
                     </div>
                 </form>
             </div>
+    </main>
     </section>
     <section id="checkin" class="page">
         <main class="main-content">
@@ -169,9 +171,9 @@
                         <label for="observations">Observações Adicionais:</label>
                         <textarea class="auto-grow" placeholder="Digite aqui..."></textarea>
 
-                        <button type="submit" class="checkin-btn">Fazer Check-in</button>
+                        <button type="submit" class="button1">Fazer Check-in</button>
 
-                </div>
+                    </form> </div>
             </div>
         </main>
     </section>
@@ -225,7 +227,7 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="submit-btn">Finalizar</button>
+                    <button type="submit" class="button1">Finalizar</button>
                 </div>
             </form>
         </div>
@@ -644,7 +646,7 @@
             <div class="card1">
                 <p>Não achou o que deseja ?</p>
                 <br>
-                <button class="contact-btn">Contate o Suporte</button>
+                <button class="button1">Contate o Suporte</button>
             </div>
         </main>
     </section>
@@ -678,36 +680,7 @@
             </main>
         </div>
     </section>
-    <section id="configuracoes" class="page">
-        <div class="container-config">
-            <section class="section-group">
-                <h3>Preferência</h3>
-                <div class="toggle-setting">
-                    <label for="modo-escuro">Modo escuro</label>
-                    <label class="switch">
-                        <input type="checkbox" id="modo-escuro" onclick="darkModeToggle()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="toggle-setting">
-                    <label for="receber-notificacao">Receber notificação por e-mail</label>
-                    <label class="switch">
-                        <input type="checkbox" id="receber-notificacao" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="dropdown-setting">
-                    <label for="idioma">Idioma</label>
-                    <select id="idioma">
-                        <option value="pt-br">Português</option>
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                    </select>
-                </div>
-            </section>
-            </main>
-        </div>
-    </section>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script> 
     <script src="script.js"></script>
 </body>
 </html>

@@ -409,3 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Inicializa a página
+document.addEventListener('DOMContentLoaded', () => {
+    filterNotifications('todas'); // Carrega a aba 'Todas' ao iniciar
+});
