@@ -167,12 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    /**
-     * Cria o HTML para um único item de notificação.
-     */
     const createNotificationHTML = (notification, status, isDetailView = false) => {
         const justification = isDetailView
-            ? notification.justificativa + ' Completa' // Adiciona 'Completa' para a visualização detalhada
+            ? notification.justificativa + ' Completa' 
             : notification.justificativa;
 
         const displayStyle = isDetailView ? 'style="display: none;"' : '';

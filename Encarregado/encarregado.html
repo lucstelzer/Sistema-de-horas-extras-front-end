@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encarregado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#dashboard" onclick="showpage('dashboard')">
+                <img src="/Trabalho Fortes/Logo .png" alt="Logo da Empresa" class="logo">
+            </a>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#perfil" onclick="showpage('perfil')"><i class="fa-solid fa-user"></i> Perfil</a></li>
+            <li><a href="#checkin" onclick="showpage('checkin')"><i class="fa-solid fa-check"></i> Check-in</a></li>
+            <li><a href="#fazer_solicitacao" onclick="showpage('fazer_solicitacao')"><i
+                        class="fa-solid fa-list-ul"></i>Fazer solicitação</a></li>
+            <li><a href="#relatorios" onclick="showpage('relatorios')"><i class="fa-solid fa-chart-bar"></i>
+                    Relatórios</a></li>
+            <li><a href="#notificacoes" onclick="showpage('notificacoes')"><i class="fa-solid fa-bell"></i>
+                    Notificações</a></li>
+            <li><a href="#perguntas" onclick="showpage('perguntas')"><i class="fa-solid fa-question-circle"></i>
+                    Perguntas</a></li>
+            <li><a href="#configuracoes" onclick="showpage('configuracoes')"><i class="fa-solid fa-cog"></i>
+                    Configurações</a></li>
+            <li id="logout"><a href="#"><i class="fa-solid fa-sign-out-alt"></i>Deslogar</a></li>
+        </ul>
+    </nav>
+
+    <button class="hamburger-btn" id="toggle-sidebar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <section id="dashboard" class="page">
+        <main class="main-content">
+        
+        <h1 class="main-title">Bem Vindo, Encarregado!</h1>
+
+        <div class="dashboard-grid top-widgets">
+            
+            <div class="widget chart-widget">
+                <h3>Últimos pedidos de hora</h3>
+                <div class="pie-chart-container">
+                    <div class="pie-chart"></div>
+                    <div class="chart-legend">
+                        <div><span class="dot approved"></span> Aprovado</div>
+                        <div><span class="dot reproved"></span> Reprovado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Notícias da empresa</h2>
+        <div class="dashboard-grid news-widgets">
+            
+            <div class="widget news-item">
+                <h3>Postagens Recentes</h3>
+                <p>Próxima folga está prevista para daqui a 27/08, continue a trabalhar duro até lá.</p>
+            </div>
+            
+            <div class="widget news-item">
+                <h3>Postagens Anteriores</h3>
+                <p>Conseguimos mais de 1 bilhão em lucro, em comemoração todos ganharão um bombom. Trabalhem mais que logo logo comprarei a minha nova BMW. Abraços, Chefe</p>
+            </div>
+            
+            <div class="widget news-item">
+                <h3>Emails Recebidos</h3>
+                <p>Graças a você a empresa lucrou bilhões só esse mês, não sei como você fez isso mas continue assim! Abraços, Chefe da Chefe</p>
+            </div>
+
+        </div>
+    </main>
+    </section>
+    <section id="perfil" class="page">
+        <main class="main-content">
+        <header class="content-header">
+            <h2 id="page-title">Perfil</h2>
+        </header>
+
+        <div class="profile-container">
+            <div class="profile-card">
+                <img src="../icone perfil.jpg" alt="Avatar do Encarregado" class="profile-avatar">
+                <h3 class="profile-name" id="profile-name">Encarregado</h3>
+                <div class="profile-details">
+                    <p class="profile-info"><strong>Email:</strong> <span id="profile-email">Encarregado.nome@fortes.com.br</span></p>
+                    <p class="profile-info"><strong>Matrícula:</strong> <span id="profile-matricula">34567</span></p>
+                    <p class="profile-info"><strong>Função:</strong> <span id="profile-funcao">Encarregado Equipe de Manutenção</span></p>
+                    <p class="profile-info"><strong>Setor:</strong> <span id="profile-setor">Elétrica</span></p>
+                    <p class="profile-info"><strong>Telefone:</strong> <span id="profile-telefone">(27) 11111-1111</span></p>
+                    <p class="profile-info"><strong>Unidade:</strong> <span id="profile-unidade">Matriz - Vitória</span></p>
+                </div>
+                <a href="#editar_perfil" onclick="showpage('editar_perfil')" class="edit-btn" style="text-decoration: none;">
+                    <i class="fa-solid fa-pencil-alt"></i> Editar Perfil
+                </a>
+            </div>
+        </div>
+    </main>
+    </section>
+    <section id="editar_perfil" class="page">
+        <main class="main-content">
+            <div class="form-container">
+                <h3>Editar Perfil</h3>
+
+                <form id="edit-form">
+
+                    <div class="form-group">
+                        <label for="edit-nome">Nome:</label>
+                        <input type="text" id="edit-nome" name="nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email:</label>
+                        <input type="email" id="edit-email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-telefone">Telefone:</label>
+                        <input type="text" id="edit-telefone" name="telefone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-matricula">Matrícula (não editável):</label>
+                        <input type="text" id="edit-matricula" name="matricula" readonly disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-funcao">Função (não editável):</label>
+                        <input type="text" id="edit-funcao" name="funcao" readonly disabled>
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" id="btn-salvar" class="btn-salvar">Salvar Alterações</button>
+
+                        <a href="#perfil" onclick="showpage('perfil')" class="btn-cancelar">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+    </section>
+    <section id="checkin" class="page">
+        <main class="main-content">
+            <header class="content-header-2">
+                <h2 id="page-title">Check-in</h2>
+            </header>
+
+            <div class="checkin-container">
+                <div class="checkin-card">
+                    <form id="checkin-form">
+                        <label for="name">Nome Completo:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="checkin-date">Data:</label>
+                        <input type="date" id="checkin-date" name="checkin-date" required>
+
+                        <label for="checkin-time">Hora:</label>
+                        <input type="time" id="checkin-time" name="checkin-time" required>
+
+                        <label for="location">Local de trabalho ou setor:</label>
+                        <input type="text" id="location" name="location" required>
+
+                        <label for="activity-type">Tipo de Atividade:</label>
+                        <input type="text" id="activity-type" name="activity-type" required>
+
+                        <label for="observations">Observações Adicionais:</label>
+                        <textarea class="auto-grow" placeholder="Digite aqui..."></textarea>
+
+                        <button type="submit" class="checkin-btn">Fazer Check-in</button>
+
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="fazer_solicitacao" class="page">
+        <main class="main-content">
+        <h1>Fazer Solicitação</h1>
+
+        <div class="form-container">
+            <form id="solicitacao-form">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tecnicos">Nome / ID (Técnicos)</label>
+                        <select id="tecnicos" name="tecnicos" multiple required>
+                            <option value="101">João Silva (ID: 101)</option>
+                            <option value="102">Maria Souza (ID: 102)</option>
+                            <option value="103">Carlos Pereira (ID: 103)</option>
+                            <option value="104">Ana Beatriz (ID: 104)</option>
+                            <option value="105">Técnico Visitante (ID: 105)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Motivo</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="" disabled selected>Selecione um motivo</option>
+                            <option value="reuniao">Reunião</option>
+                            <option value="visita_tecnica">Visita Técnica</option>
+                            <option value="manutencao">Manutenção</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="local">Local</label>
+                        <input type="text" id="local" name="local" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hora_inicio">Hora de início:</label>
+                        <input type="time" id="hora_inicio" name="hora_inicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora_termino">Hora de término:</label>
+                        <input type="time" id="hora_termino" name="hora_termino" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Finalizar</button>
+                </div>
+            </form>
+        </div>
+    </main>   
+    </section>
+    <section id="relatorios" class="page">
+        <main class="main-content">
+        
+        <header class="main-header">
+            <h1>Relatórios Gerais</h1>
+            <div class="date-display">
+                <span>03/11/2025</span>
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+        </header>
+
+        <section class="chart-box">
+            <h3>Relatório dos últimos 30 dias</h3>
+            
+            <div id="daily-reports-container">
+                
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 1</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 2</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>4h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 33.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 3</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 4</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 5</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>3h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 25%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 6</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 7</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 8</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>4h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 33.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 9</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 10</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 11</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>3h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 25%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 12</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 13</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 14</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 15</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 16</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>4h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 33.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 17</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 18</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>3h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 25%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 19</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 20</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 21</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 22</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>4h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 33.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 23</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 24</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 25</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>3h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 25%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 26</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 27</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>1h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 8.33%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 28</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>0h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 0%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 29</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>2h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 16.66%;"></div></div>
+                    </div>
+                </div>
+                <div class="daily-report">
+                    <h4 class="report-date">Funcionário: Nome do Técnico 30</h4>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas aprovadas</span><span>8h</span></div>
+                        <div class="bar-container"><div class="bar worked" style="width: 66.66%;"></div></div>
+                    </div>
+                    <div class="report-bar-group">
+                        <div class="bar-label"><span>Horas feitas</span><span>3h</span></div>
+                        <div class="bar-container"><div class="bar extra" style="width: 25%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bottom-content">
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="color-box worked"></span> Horas aprovadas
+                </div>
+                <div class="legend-item">
+                    <span class="color-box extra"></span> Horas feitas
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <p>Deseja solicitar mais horas extras? clique <a href="#fazer_solicitacao" onclick="showpage('fazer_solicitacao')">aqui</a></p>
+            </div>
+        </section>
+
+    </main>
+    </section>
+    <section id="notificacoes" class="page">
+        <div class="notifications-container">
+            <h1 class="header-title">Notificações</h1>
+
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Pesquisar" onkeyup="filterNotifications()">
+                </div>
+                <br>
+                <div class="filter-buttons">
+                    <span>Mostrar:</span>
+                    <button class="filter-btn active" data-filter="todas"
+                        onclick="filterNotifications('todas')">Todas</button>
+                    <button class="filter-btn" data-filter="lidas" onclick="filterNotifications('lidas')">Lidas</button>
+                    <button class="filter-btn" data-filter="nao-lidas" onclick="filterNotifications('nao-lidas')">Não
+                        lidas</button>
+                </div>
+            </div>
+
+            <div id="notificationList" class="notification-list">
+            </div>
+
+        </div>
+    </section>
+    <section id="perguntas" class="page">
+        <main class="content">
+            <div class="card">
+                <h3>Perguntas Frequentes</h3>
+                <div class="faq-item">
+                    <h4>Como faço para redefinir minha senha?</h4>
+                    <p>Para redefinir sua senha, clique em "Esqueci minha senha" na página de login e siga as instruções
+                        enviadas para seu e-mail.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Como entro em contato com o suporte técnico?</h4>
+                    <p>Você pode entrar em contato com o suporte técnico através do e-mail suporte@fortes.com.br ou pelo
+                        telefone (27) 3333-0000.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Como atualizo minhas informações de perfil?</h4>
+                    <p>Para atualizar suas informações de perfil, acesse a seção "Perfil" no menu lateral e clique no
+                        botão "Editar Perfil".</p>
+                </div>
+            </div>
+            <div class="card1">
+                <p>Não achou o que deseja ?</p>
+                <br>
+                <button class="contact-btn">Contate o Suporte</button>
+            </div>
+        </main>
+    </section>
+    <section id="configuracoes" class="page">
+        <div class="container-config">
+            <section class="section-group">
+                <h3>Preferência</h3>
+                <div class="toggle-setting">
+                    <label for="modo-escuro">Modo escuro</label>
+                    <label class="switch">
+                        <input type="checkbox" id="modo-escuro" onclick="darkModeToggle()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-setting">
+                    <label for="receber-notificacao">Receber notificação por e-mail</label>
+                    <label class="switch">
+                        <input type="checkbox" id="receber-notificacao" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="dropdown-setting">
+                    <label for="idioma">Idioma</label>
+                    <select id="idioma">
+                        <option value="pt-br">Português</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </section>
+            </main>
+        </div>
+    </section>
+    <section id="configuracoes" class="page">
+        <div class="container-config">
+            <section class="section-group">
+                <h3>Preferência</h3>
+                <div class="toggle-setting">
+                    <label for="modo-escuro">Modo escuro</label>
+                    <label class="switch">
+                        <input type="checkbox" id="modo-escuro" onclick="darkModeToggle()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="toggle-setting">
+                    <label for="receber-notificacao">Receber notificação por e-mail</label>
+                    <label class="switch">
+                        <input type="checkbox" id="receber-notificacao" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="dropdown-setting">
+                    <label for="idioma">Idioma</label>
+                    <select id="idioma">
+                        <option value="pt-br">Português</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </section>
+            </main>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
