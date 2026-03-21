@@ -9,17 +9,17 @@ Até agora, o foco total foi no **Front-end**. Criámos toda a experiência visu
 Como testar o sistema? (Logins de Teste)
 Como ainda não ligámos o banco de dados, podes usar estes acessos de simulação diretamente na tela de login:
 
-* Para entrar como Técnico:**
-    * Utilizador (Cadastro):** tecnico
-    * Palavra-passe:** 123
+* Para entrar como Técnico:
+    * Utilizador (Cadastro): tecnico
+    * Palavra-passe: 123
 
-* Para entrar como Encarregado:**
-    * Utilizador (Cadastro):** encarregado
-    * Palavra-passe:** 456
+* Para entrar como Encarregado:
+    * Utilizador (Cadastro): encarregado
+    * Palavra-passe: 456
 
-* Para entrar como Gestor:**
-    * Utilizador (Cadastro):** gestor
-    * Palavra-passe:** 789
+* Para entrar como Gestor:
+    * Utilizador (Cadastro): gestor
+    * Palavra-passe: 789
 
 O que cada perfil faz?
 
